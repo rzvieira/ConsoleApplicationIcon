@@ -37,7 +37,9 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "NotifyIcon";
             this.Text = "NotifyIcon";
+            this.TopMost = true;
             this.ResumeLayout(false);
+
         }
 
         #endregion

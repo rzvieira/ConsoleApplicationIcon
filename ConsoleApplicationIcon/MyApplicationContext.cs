@@ -27,6 +27,10 @@ namespace ConsoleApplicationIcon
             _trayIcon.BalloonTipIcon = ToolTipIcon.Info;
             _trayIcon.BalloonTipText = "Recalculando Indicadores, clique para ver detalhes.";
             _trayIcon.BalloonTipTitle = "Recalculo de Indicadores";
+
+            //Handle click balloon
+            _trayIcon.BalloonTipClicked += _trayIcon_BalloonTipClicked;
+
             _trayIcon.Text = "Recalculando Indicadores";
 
             //The icon is added to the project resources
@@ -55,6 +59,12 @@ namespace ConsoleApplicationIcon
             _trayIcon.ContextMenuStrip = _trayIconContextMenu;
 
 
+        }
+
+        private void _trayIcon_BalloonTipClicked(object sender, EventArgs e)
+        {
+            Form frm = new Form();
+            frm.ShowDialog(new NotifyIcon());
         }
 
         private void CloseMenuItem(object sender, EventArgs e)
